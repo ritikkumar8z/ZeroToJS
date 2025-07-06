@@ -223,7 +223,6 @@ npm install @react-firebase/functions
 npm install @react-firebase/storage
 npm install @react-firebase/auth
 npm install @react-firebase/database
-npm install @react-firebase/firestore
 npm install @react-firebase/functions
 npm install @react-firebase/storage
 

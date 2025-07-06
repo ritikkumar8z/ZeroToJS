@@ -13,9 +13,9 @@ yarn-error.log*
 # Windows system files
 Thumbs.db
 ehthumbs.db
-Desktop.ini
+Desktop.ini 
 
-# Editor folders/files
+# Editor folders/files 
 .vscode/
 .idea/
 *.sublime-workspace
