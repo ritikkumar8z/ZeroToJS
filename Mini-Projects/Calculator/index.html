@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calc">
+      <input type="text" id="display" aria-label="input" disabled />
+      <div class="keys">
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('+')">+</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="clearDisplay()">C</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

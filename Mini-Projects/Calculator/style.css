@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .calc {
+    border: 2px solid #333;
+    padding: 10px;
+  }
+  .keys button {
+    margin: 5px;
+    padding: 10px 15px;
+  }
+  

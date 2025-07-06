@@ -1,0 +1,133 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #007bff;
+    letter-spacing: 1px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    margin: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content, .form-section, .event-section {
+    text-align: center;
+    margin: 40px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.content:hover, .form-section:hover, .event-section:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #28a745;
+}
+
+form input {
+    padding: 12px;
+    width: 80%;
+    max-width: 350px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form button {
+    width: 50%;
+    background-color: #28a745;
+}
+
+form button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.event-btn {
+    background-color: #28a745;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.event-btn:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+#element-container {
+    margin-top: 20px;
+}
+
+.new-element {
+    background-color: #6c757d;
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.new-element:hover {
+    transform: translateY(-2px);
+    background-color: #5a6268;
+}
+
+.new-element:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .content, .form-section, .event-section {
+        margin: 20px;
+        padding: 20px;
+        width: 90%;
+    }
+}
