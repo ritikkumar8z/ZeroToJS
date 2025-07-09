@@ -79,9 +79,7 @@ firebase login
 firebase init
 
 # ✅ During initialization:
-# - Select: Hosting ✅ (and optionally Firestore, Auth, DB, Functions, Storage)
-# - Public directory: dist/ (for Vite) or build/ (for React)
-# - Configure as SPA: Yes ✅
+  # - Configure as SPA: Yes ✅
 # - Overwrite index.html: No ❌
 
 # STEP 4: Build your project (React/Vite)
