@@ -13,8 +13,7 @@ Welcome to the **JavaScript 0 to Hero Practice Course** – a fully hands-on, be
 ✅ Fetch API and JSON handling  
 ✅ Local storage and session storage  
 ✅ Error handling and debugging  
-✅ Modular JS and clean code practices     
-
+✅ Modular JS and clean code practices  
 
 ---
 
