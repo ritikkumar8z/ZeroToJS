@@ -1,4 +1,4 @@
-  ## 🧠 JavaScript 0 to Hero Practice Course
+   ## 🧠 JavaScript 0 to Hero Practice Course
 
 Welcome to the **JavaScript 0 to Hero Practice Course** – a fully hands-on, beginner-to-advanced guide to mastering JavaScript through practical examples and real-world projects. Whether you're just starting out or looking to strengthen your JS skills, this course has something for everyone!
 
@@ -6,7 +6,7 @@ Welcome to the **JavaScript 0 to Hero Practice Course** – a fully hands-on, be
 
 ## 🚀 What You’ll Learn 
 
-✅ JavaScript fundamentals (variables, data types, loops, functions, etc.)  
+✅ JavaScript fundamentals (variables, data types, loops, functions, etc.)    
 ✅ DOM manipulation and event handling  
 ✅ ES6+ features (let/const, arrow functions, promises, async/await, etc.)  
 ✅ Array and object methods (map, filter, reduce, destructuring, etc.)  
