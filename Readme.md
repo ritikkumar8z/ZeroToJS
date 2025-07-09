@@ -106,14 +106,14 @@ This course isn’t just about learning syntax — it’s about **building real 
 Want to contribute or improve the course?  
 Fork this repo, make your changes, and create a pull request! 🚀
 
----
+---  
 
 ## 📫 Connect with Me
 
 Made with 💙 by **Ritik Kumar**  
 
 🔗 [Portfolio](https://ritikkumar8z.web.app)  
-🔗 [LinkedIn](https://www.linkedin.com/in/ritikkumar8z)  
+🔗 [LinkedIn](https://www.linkedin.com/in/ritikkumar8z)   
 🔗 [GitHub](https://github.com/ritikkumar8z)  
 
 ---
