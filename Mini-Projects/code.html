@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --amazon-primary: #131921;
+            --amazon-secondary: #232f3e;
+            --amazon-yellow: #febd69;
+            --amazon-yellow-dark: #f3a847;
+        }
+        
+        body {
+            font-family: 'Amazon Ember', Arial, sans-serif;
+            background-color: #eaeded;
+        }
+        
+        .header {
+            background-color: var(--amazon-primary);
+        }
+        
+        .nav-bottom {
+            background-color: var(--amazon-secondary);
+        }
+        
+        .search-bar {
+            flex-grow: 1;
+        }
+        
+        .search-bar:focus-within {
+            box-shadow: 0 0 0 3px var(--amazon-yellow-dark);
+        }
+        
+        .search-button {
+            background-color: var(--amazon-yellow);
+        }
+        
+        .search-button:hover {
+            background-color: var(--amazon-yellow-dark);
+        }
+        
+        .product-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .hero-slide {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slider-nav-dot.active {
+            background-color: var(--amazon-yellow) !important;
+        }
+        
+        .cart-sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .cart-sidebar.active {
+            transform: translateX(0);
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header text-white w-full">
+        <!-- Top Navigation -->
+        <div class="flex items-center py-2 px-4">
+            <!-- Logo -->
+            <div class="flex items-center mr-4">
+                <a href="#" class="flex items-center">
+                    <img src="https://placehold.co/120x45?text=Amazon+Clone" alt="Amazon logo with white text on blue background" class="h-8">
+                </a>
+            </div>
+            
+            <!-- Delivery Location -->
+            <div class="hidden md:flex items-center mx-2 cursor-pointer">
+                <div class="mr-1">
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div class="text-xs flex flex-col leading-none">
+                    <span class="text-gray-300">Deliver to</span>
+                    <span class="font-bold">United States</span>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-bar flex flex-grow mx-4">
+                <select class="bg-gray-100 text-xs text-gray-700 px-2 rounded-l-md border-r border-gray-300 focus:outline-none">
+                    <option>All</option>
+                    <option>Alexa Skills</option>
+                    <option>Amazon Devices</option>
+                    <option>Amazon Fashion</option>
+                    <option>Amazon Fresh</option>
+                </select>
+                <input type="text" class="flex-grow px-4 py-2 text-black focus:outline-none" placeholder="Search Amazon">
+                <button class="search-button px-4 py-2 rounded-r-md">
+                    <i class="fas fa-search text-gray-800"></i>
+                </button>
+            </div>
+            
+            <!-- Language Selector -->
+            <div class="hidden lg:flex items-center mx-4 cursor-pointer">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/20x15" alt="United States flag icon" class="h-4 mr-1">
+                    <span class="text-sm font-bold">EN</span>
+                </div>
+            </div>
+            
+            <!-- Account & Lists -->
+            <div class="hidden md:flex flex-col mx-3 cursor-pointer">
+                <span class="text-xs text-gray-300">Hello, Sign in</span>
+                <span class="text-sm font-bold flex items-center">
+                    Account & Lists
+                    <i class="fas fa-caret-down ml-1 text-xs"></i>
+                </span>
+            </div>
+            
+            <!-- Returns & Orders -->
+            <div class="hidden md:flex flex-col mx-3 cursor-pointer">
+                <span class="text-xs text-gray-300">Returns</span>
+                <span class="text-sm font-bold">& Orders</span>
+            </div>
+            
+            <!-- Cart -->
+            <div class="flex items-center mx-3 cursor-pointer relative" id="cart">
+                <div class="flex items-end">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <span class="text-sm font-bold ml-1">Cart</span>
+                    <span class="absolute -top-2 -right-1 px-1.5 py-0.5 bg-yellow-400 text-black text-xs font-bold rounded-full">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation -->
+        <div class="nav-bottom px-4 py-2 flex items-center">
+            <div class="flex items-center cursor-pointer mr-6">
+                <i class="fas fa-bars mr-2"></i>
+                <span class="text-sm font-bold">All</span>
+            </div>
+            
+            <nav class="hidden lg:flex space-x-4">
+                <a href="#" class="text-sm py-1 px-1 hover:border hover:border-white">Today's Deals</a>
+                <a href="#" class="text-sm py-1 px-1 hover:border hover:border-white">Customer Service</a>
+                <a href="#" class="text-sm py-1 px-1 hover:border hover:border-white">Registry</a>
+                <a href="#" class="text-sm py-1 px-1 hover:border hover:border-white">Gift Cards</a>
+                <a href="#" class="text-sm py-1 px-1 hover:border hover:border-white">Sell</a>
+            </nav>
+            
+            <div class="ml-auto hidden lg:block">
+                <a href="#" class="text-sm font-bold">
+                    Amazon's response to COVID-19
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="max-w-screen-2xl mx-auto">
+        <!-- Hero Slider -->
+        <div class="relative overflow-hidden h-80 md:h-auto md:max-h-96 bg-white">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                    <p class="text-gray-500 mb-4">Loading featured products...</p>
+                    <div class="pulse h-2 w-32 bg-gray-300 mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="hidden hero-slider h-full">
+                <div class="hero-slide h-full">
+                    <img src="https://placehold.co/1440x400" alt="Wide banner showing various Amazon products including electronics, books, and home goods on a white background" class="w-full h-full object-cover">
+                </div>
+                <div class="hero-slide h-full">
+                    <img src="https://placehold.co/1440x400" alt="Amazon Prime banner featuring fast delivery truck with Prime logo and tagline about free delivery" class="w-full h-full object-cover">
+                </div>
+                <div class="hero-slide h-full">
+                    <img src="https://placehold.co/1440x400" alt="Black Friday deals banner with countdown timer and discount percentages on popular electronics" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <div class="slider-nav-dot w-2 h-2 rounded-full bg-gray-400 cursor-pointer"></div>
+                <div class="slider-nav-dot w-2 h-2 rounded-full bg-gray-400 cursor-pointer"></div>
+                <div class="slider-nav-dot w-2 h-2 rounded-full bg-gray-400 cursor-pointer"></div>
+            </div>
+        </div>
+        
+        <!-- Shop by Category -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 px-2 py-4">
+            <div class="bg-white p-4 rounded-md">
+                <h3 class="font-bold text-lg mb-2">Shop by Category</h3>
+                <div class="grid grid-cols-3 gap-2">
+                    <a href="#" class="flex flex-col items-center p-2 hover:shadow-md">
+                        <img src="https://placehold.co/80" alt="Electronics category icon - smartphone, laptop, and headset" class="w-12 h-12 mb-1">
+                        <span class="text-xs text-center">Electronics</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center p-2 hover:shadow-md">
+                        <img src="https://placehold.co/80" alt="Fashion category icon - clothing hanger with various garments" class="w-12 h-12 mb-1">
+                        <span class="text-xs text-center">Fashion</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center p-2 hover:shadow-md">
+                        <img src="https://placehold.co/80" alt="Home & Kitchen category icon - sofa, table and chairs" class="w-12 h-12 mb-1">
+                        <span class="text-xs text-center">Home</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center p-2 hover:shadow-md">
+                        <img src="https://placehold.co/80" alt="Beauty category icon - cosmetic products and brushes" class="w-12 h-12 mb-1">
+                        <span class="text-xs text-center">Beauty</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center p-2 hover:shadow-md">
+                        <img src="https://placehold.co/80" alt="Toys category icon - teddy bear and building blocks" class="w-12 h-12 mb-1">
+                        <span class="text-xs text-center">Toys</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center p-2 hover:shadow-md">
+                        <img src="https://placehold.co/80" alt="Books category icon - stack of three colorful books" class="w-12 h-12 mb-1">
+                        <span class="text-xs text-center">Books</span>
+                    </a>
+                </div>
+                <a href="#" class="block text-blue-600 hover:underline text-xs mt-2">See more</a>
+            </div>
+            
+            <!-- Featured Products -->
+            <div class="bg-white p-4 rounded-md">
+                <h3 class="font-bold text-lg mb-2">Today's Deals</h3>
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="pulse h-2 w-32 bg-gray-300 mx-auto"></div>
+                    </div>
+                    
+                    <div class="hidden grid grid-cols-3 gap-4">
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">25% off</div>
+                                <img src="https://placehold.co/120" alt="Wireless Bluetooth headphones in black color with charging case" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-sm font-bold text-blue-600">Wireless Headphones</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$59.99</span>
+                                    <span class="text-red-600 font-bold">$44.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">4,289</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">15% off</div>
+                                <img src="https://placehold.co/120" alt="Smartwatch with fitness tracking features in dark blue color" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-sm font-bold text-blue-600">Fitness Tracker</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$129.99</span>
+                                    <span class="text-red-600 font-bold">$109.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">2,103</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">30% off</div>
+                                <img src="https://placehold.co/120" alt="Kitchen blender with four-speed settings in stainless steel" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-sm font-bold text-blue-600">Blender</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$39.99</span>
+                                    <span class="text-red-600 font-bold">$27.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-500 ml-1">1,752</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="block text-blue-600 hover:underline text-xs mt-2">See all deals</a>
+            </div>
+            
+            <!-- Recommended Products -->
+            <div class="bg-white p-4 rounded-md">
+                <h3 class="font-bold text-lg mb-2">Recommended for You</h3>
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="pulse h-2 w-32 bg-gray-300 mx-auto"></div>
+                    </div>
+                    
+                    <div class="hidden grid grid-cols-1 gap-4">
+                        <div class="product-card flex border rounded-md p-2">
+                            <div class="w-1/3">
+                                <img src="https://placehold.co/120" alt="Bestselling novel with cover showing dramatic landscape and title in gold letters" class="w-full h-full object-contain">
+                            </div>
+                            <div class="w-2/3 pl-2">
+                                <h4 class="text-sm font-bold text-blue-600">The Midnight Library: A Novel</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">32,145</span>
+                                </div>
+                                <div class="mt-1">
+                                    <span class="text-red-600 font-bold">$14.99</span>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">Paperback</div>
+                            </div>
+                        </div>
+                        <div class="product-card flex border rounded-md p-2">
+                            <div class="w-1/3">
+                                <img src="https://placehold.co/120" alt="4K streaming device with voice remote in black color" class="w-full h-full object-contain">
+                            </div>
+                            <div class="w-2/3 pl-2">
+                                <h4 class="text-sm font-bold text-blue-600">Streaming Device 4K</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">12,678</span>
+                                </div>
+                                <div class="mt-1">
+                                    <span class="text-red-600 font-bold">$39.99</span>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">Free Shipping</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Electronics Banner -->
+            <div class="bg-white p-4 rounded-md md:col-span-2 lg:col-span-3">
+                <h3 class="font-bold text-lg mb-2">Electronics</h3>
+                <div class="relative min-h-40">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="pulse h-2 w-32 bg-gray-300 mx-auto"></div>
+                    </div>
+                    
+                    <div class="hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Latest smartphone model with edge-to-edge display and triple camera system" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Smartphone</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">8,547</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$699.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Slim laptop with backlit keyboard and high-resolution display" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Laptop</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">5,218</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$899.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Noise-cancelling wireless headphones in black with microphone" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Headphones</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-500 ml-1">23,641</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$249.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Smart home assistant with circular design and LED light ring" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Smart Speaker</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">16,329</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$99.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Streaming game controller with ergonomic design and customizable buttons" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Game Controller</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">3,782</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$59.99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- More Sections -->
+        <div class="mt-4 px-2">
+            <div class="bg-white p-4 rounded-md mb-4">
+                <h3 class="font-bold text-xl mb-4">Frequently repurchased in Beauty</h3>
+                <div class="relative min-h-40">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="pulse h-2 w-32 bg-gray-300 mx-auto"></div>
+                    </div>
+                    
+                    <div class="hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Best-selling moisturizing cream with hyaluronic acid in white bottle" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Moisturizer</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">18,542</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$18.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Shampoo bottle with coconut oil formula and pump dispenser" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Shampoo</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-500 ml-1">12,689</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$8.97</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Serum with vitamin C in amber glass bottle with dropper" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Vitamin C Serum</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">9,753</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$23.45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Facial cleanser in green tube with natural ingredients label" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Facial Cleanser</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-500 ml-1">14,236</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$12.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Sunscreen lotion with SPF 50 in blue and white bottle" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Sunscreen SPF 50</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">7,814</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$14.25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <img src="https://placehold.co/120" alt="Organic lip balm set in various flavors with colorful packaging" class="w-full">
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Lip Balm Set</h4>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">5,987</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <span class="text-red-600 font-bold text-sm">$16.49</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deals Under $25 -->
+            <div class="bg-white p-4 rounded-md mb-4">
+                <h3 class="font-bold text-xl mb-4">Deals Under $25</h3>
+                <div class="relative min-h-40">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="pulse h-2 w-32 bg-gray-300 mx-auto"></div>
+                    </div>
+                    
+                    <div class="hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">35% off</div>
+                                <img src="https://placehold.co/120" alt="Multipack of microfiber cleaning cloths in various colors" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Cleaning Cloths</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$19.99</span>
+                                    <span class="text-red-600 font-bold text-sm">$12.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">3,542</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">20% off</div>
+                                <img src="https://placehold.co/120" alt="Plastic food storage containers with colorful lids in a set" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Food Containers</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$24.99</span>
+                                    <span class="text-red-600 font-bold text-sm">$19.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">2,689</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">50% off</div>
+                                <img src="https://placehold.co/120" alt="Bluetooth neckband earphones in black with built-in microphone" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Neckband Earphones</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$49.99</span>
+                                    <span class="text-red-600 font-bold text-sm">$24.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">1,753</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">30% off</div>
+                                <img src="https://placehold.co/120" alt="Stainless steel water bottle with double-wall insulation" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Water Bottle</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$29.99</span>
+                                    <span class="text-red-600 font-bold text-sm">$20.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-500 ml-1">4,236</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">45% off</div>
+                                <img src="https://placehold.co/120" alt="Set of reusable silicone food covers in assorted sizes and colors" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Food Covers</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$22.99</span>
+                                    <span class="text-red-600 font-bold text-sm">$12.64</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-500 ml-1">1,814</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card border rounded-md p-2">
+                            <div class="relative">
+                                <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-1 rounded">15% off</div>
+                                <img src="https://placehold.co/120" alt="Ceramic coffee mug with humorous quote about morning coffee" class="w-full">
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="text-xs font-bold text-blue-600 truncate">Coffee Mug</h4>
+                                <div class="flex items-center mt-1">
+                                    <span class="line-through text-gray-500 text-xs mr-2">$19.99</span>
+                                    <span class="text-red-600 font-bold text-sm">$16.99</span>
+                                </div>
+                                <div class="text-yellow-400 text-xs mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-500 ml-1">5,987</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-200 mt-10">
+        <div class="max-w-screen-2xl mx-auto">
+            <!-- Back to top -->
+            <div class="bg-gray-300 py-4 border-b border-gray-400">
+                <div class="text-center">
+                    <a href="#" class="text-sm text-gray-700 hover:underline">Back to top</a>
+                </div>
+            </div>
+            
+            <!-- Footer links -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8">
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-4">Get to Know Us</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><a href="#" class="hover:underline">Careers</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">About Amazon</a></li>
+                        <li><a href="#" class="hover:underline">Investor Relations</a></li>
+                        <li><a href="#" class="hover:underline">Amazon Devices</a></li>
+                        <li><a href="#" class="hover:underline">Amazon Science</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-4">Make Money with Us</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><a href="#" class="hover:underline">Sell products on Amazon</a></li>
+                        <li><a href="#" class="hover:underline">Sell on Amazon Business</a></li>
+                        <li><a href="#" class="hover:underline">Sell apps on Amazon</a></li>
+                        <li><a href="#" class="hover:underline">Become an Affiliate</a></li>
+                        <li><a href="#" class="hover:underline">Advertise Your Products</a></li>
+                        <li><a href="#" class="hover:underline">Self-Publish with Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-4">Amazon Payment Products</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><a href="#" class="hover:underline">Amazon Business Card</a></li>
+                        <li><a href="#" class="hover:underline">Shop with Points</a></li>
+                        <li><a href="#" class="hover:underline">Reload Your Balance</a></li>
+                        <li><a href="#" class="hover:underline">Amazon Currency Converter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-4">Let Us Help You</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><a href="#" class="hover:underline">Amazon and COVID-19</a></li>
+                        <li><a href="#" class="hover:underline">Your Account</a></li>
+                        <li><a href="#" class="hover:underline">Your Orders</a></li>
+                        <li><a href="#" class="hover:underline">Shipping Rates & Policies</a></li>
+                        <li><a href="#" class="hover:underline">Returns & Replacements</a></li>
+                        <li><a href="#" class="hover:underline">Manage Your Content and Devices</a></li>
+                        <li><a href="#" class="hover:underline">Amazon Assistant</a></li>
+                        <li><a href="#" class="hover:underline">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Logo and copyright -->
+            <div class="border-t border-gray-300 pt-5 pb-4 text-center text-gray-700 text-sm">
+                <div class="flex justify-center mb-4">
+                    <img src="https://placehold.co/100x30?text=Amazon+Logo" alt="Amazon logo with white text on blue background" class="h-6">
+                </div>
+                <div class="flex flex-wrap justify-center space-x-4 text-xs mb-2">
+                    <a href="#" class="hover:underline">Conditions of Use</a>
+                    <a href="#" class="hover:underline">Privacy Notice</a>
+                    <a href="#" class="hover:underline">Interest-Based Ads</a>
+                </div>
+                <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-lg transform translate-x-full z-50 p-5 overflow-y-auto">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-bold">Shopping Cart</h2>
+            <button class="close-cart text-gray-500">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="empty-cart-message text-center py-10">
+            <i class="fas fa-shopping-cart text-gray-300 text-4xl mb-4"></i>
+            <h3 class="font-bold text-lg mb-2">Your Amazon Cart is empty</h3>
+            <p class="text-sm text-gray-500 mb-4">Your shopping cart is waiting. Give it purpose — fill it with groceries, clothing, household supplies, electronics and more.</p>
+            <button class="bg-yellow-400 hover:bg-yellow-500 text-sm px-6 py-2 rounded-md font-medium">
+                Sign in to your account
+            </button>
+        </div>
+        
+        <div class="hidden cart-items space-y-4">
+            <div class="flex items-start border-b pb-4">
+                <div class="w-1/4">
+                    <img src="https://placehold.co/120" alt="Wireless headphones product image in cart" class="w-full">
+                </div>
+                <div class="w-2/3 ml-4">
+                    <h4 class="text-sm font-bold mb-1">Wireless Headphones</h4>
+                    <div class="text-yellow-400 text-xs mb-1">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-500 ml-1">(4,289)</span>
+                    </div>
+                    <p class="text-green-700 text-sm mb-2 font-bold">In Stock</p>
+                    <p class="text-sm mb-2">$44.99</p>
+                    <div class="flex items-center text-sm">
+                        <label class="mr-2">Qty:</label>
+                        <select class="border rounded px-2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5+</option>
+                        </select>
+                    </div>
+                    <div class="flex space-x-2 mt-2">
+                        <button class="text-xs text-blue-600 hover:underline">Delete</button>
+                        <button class="text-xs text-blue-600 hover:underline">Save for later</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hidden cart-totals mt-6 border-t pt-2">
+            <div class="text-right mb-4">
+                <span class="text-sm">Subtotal (1 item):</span>
+                <span class="font-bold ml-2">$191.99</span>
+            </div>
+            <button class="w-full bg-yellow-400 hover:bg-yellow-500 py-2 rounded-md font-medium">
+                Proceed to checkout
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Document ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cart toggle
+            const cart = document.getElementById('cart');
+            const cartSidebar = document.querySelector('.cart-sidebar');
+            const closeCart = document.querySelector('.close-cart');
+            
+            cart.addEventListener('click', function() {
+                cartSidebar.classList.add('active');
+            });
+            
+            closeCart.addEventListener('click', function() {
+                cartSidebar.classList.remove('active');
+            });
+            
+            // Simulate loading content
+            setTimeout(function() {
+                // Show hero slider
+                const heroSlider = document.querySelector('.hero-slider');
+                const heroSlides = document.querySelectorAll('.hero-slide');
+                const sliderDots = document.querySelectorAll('.slider-nav-dot');
+                
+                if (heroSlider) {
+                    heroSlider.classList.remove('hidden');
+                    heroSlides[0].classList.remove('hidden');
+                    sliderDots[0].classList.add('active');
+                }
+                
+                // Show loading placeholders
+                const placeholders = document.querySelectorAll('[class*="pulse"]');
+                placeholders.forEach(placeholder => {
+                    placeholder.parentElement.parentElement.classList.remove('hidden');
+                    placeholder.parentElement.remove();
+                });
+                
+                // Show product sections
+                const hiddenSections = document.querySelectorAll('.hidden');
+                hiddenSections.forEach(section => {
+                    section.classList.remove('hidden');
+                });
+                
+                // Initialize hero slider if elements exist
+                if (heroSlider && heroSlides.length > 0) {
+                    let currentSlide = 0;
+                    
+                    function showSlide(index) {
+                        heroSlides.forEach((slide, i) => {
+                            slide.style.opacity = i === index ? '1' : '0';
+                        });
+                        
+                        sliderDots.forEach((dot, i) => {
+                            dot.classList.toggle('active', i === index);
+                        });
+                    }
+                    
+                    function nextSlide() {
+                        currentSlide = (currentSlide + 1) % heroSlides.length;
+                        showSlide(currentSlide);
+                    }
+                    
+                    sliderDots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            currentSlide = index;
+                            showSlide(currentSlide);
+                        });
+                    });
+                    
+                    // Auto-advance slides every 3 seconds
+                    setInterval(nextSlide, 5000);
+                    
+                    // Show first slide
+                    showSlide(0);
+                }
+            }, 1000);
+            
+            // Product hover effects
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.classList.add('shadow-lg');
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.classList.remove('shadow-lg');
+                });
+            });
+            
+            // Search bar focus effect
+            const searchBar = document.querySelector('.search-bar');
+            if (searchBar) {
+                searchBar.addEventListener('focusin', function() {
+                    this.classList.add('ring-2', 'ring-yellow-400');
+                });
+                
+                searchBar.addEventListener('focusout', function() {
+                    this.classList.remove('ring-2', 'ring-yellow-400');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
