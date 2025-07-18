@@ -4,7 +4,7 @@ Welcome to the **JavaScript 0 to Hero Practice Course** – a fully hands-on, be
 
 ---
    
-## 🚀 What You’ll Learn  
+## 🚀 What You’ll Learn   
 
 ✅ JavaScript fundamentals (variables, data types, loops, functions, etc.)    
 ✅ DOM manipulation and event handling  
