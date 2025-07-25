@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoVault - Time Capsule Platform</title>
+    <meta name="description"
+        content="Create digital time capsules for your future self. Lock messages, memories, and media until a future date.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+
+<body data-theme="dark">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="time-flow"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+            <li><a href="#" class="nav-link" data-page="create">Create</a></li>
+            <li><a href="#" class="nav-link" data-page="capsules">My Capsules</a></li>
+            <li><a href="#" class="nav-link" data-page="gallery">Gallery</a></li>
+            <li><a href="#" class="nav-link" data-page="settings">Settings</a></li>
+            <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+        </ul>
+        <div class="mobile-menu" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="page active" id="home">
+        <div class="container">
+            <div class="hero">
+                <h1>ChronoVault</h1>
+                <p>Lock your memories in time. Unlock them when the moment is right.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" data-page="create">Create Time Capsule</a>
+                    <a href="#" class="btn btn-secondary" data-page="capsules">View My Capsules</a>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h2>What is ChronoVault?</h2>
+                <p>ChronoVault is your personal time machine. Create digital time capsules containing messages, photos,
+                    videos, or audio recordings that will be locked until a future date you choose. Write letters to
+                    your future self, preserve memories for loved ones, or create public capsules for the world to
+                    discover.</p>
+            </div>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px;">
+                <div class="glass-card">
+                    <i class="fas fa-lock"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3>Time-Locked Security</h3>
+                    <p>Your capsules remain securely locked until your chosen unlock date arrives.</p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-photo-video"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3>Rich Media Support</h3>
+                    <p>Include text, images, audio recordings, and videos in your time capsules.</p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-globe"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3>Public Gallery</h3>
+                    <p>Share your unlocked capsules with the world or keep them private.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Capsule Page -->
+    <div class="page" id="create">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 40px; font-size: 3rem; color: var(--accent-color);">Create
+                Time Capsule</h1>
+
+            <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+                <form id="createCapsuleForm">
+                    <div class="form-group">
+                        <label for="capsuleTitle">Capsule Title</label>
+                        <input type="text" id="capsuleTitle" class="form-control" required
+                            placeholder="Give your time capsule a meaningful title...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="capsuleMessage">Message</label>
+                        <textarea id="capsuleMessage" class="form-control" required
+                            placeholder="Write your message to the future..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="capsuleMedia">Attach Media (Optional)</label>
+                        <div class="file-upload">
+                            <input type="file" id="capsuleMedia" accept="image/*,video/*,audio/*" multiple>
+                            <div class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Click to upload images, videos, or audio</span>
+                            </div>
+                        </div>
+                        <div id="mediaPreview"></div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="unlockDate">Unlock Date</label>
+                            <input type="datetime-local" id="unlockDate" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="visibility">Visibility</label>
+                            <select id="visibility" class="form-control">
+                                <option value="private">Private</option>
+                                <option value="public">Public</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password Protection (Optional)</label>
+                        <input type="password" id="password" class="form-control"
+                            placeholder="Add password for extra security...">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-lock"></i> Create Time Capsule
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Capsules Page -->
+    <div class="page" id="capsules">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 40px; font-size: 3rem; color: var(--accent-color);">My Time
+                Capsules</h1>
+
+            <div id="capsulesContainer">
+                <div class="capsule-grid" id="capsulesGrid">
+                    <!-- Capsules will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Capsule Viewer Page -->
+    <div class="page" id="viewer">
+        <div class="container">
+            <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+                <div id="capsuleContent">
+                    <!-- Capsule content will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Public Gallery Page -->
+    <div class="page" id="gallery">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 40px; font-size: 3rem; color: var(--accent-color);">Public
+                Gallery</h1>
+
+            <div class="capsule-grid" id="publicGallery">
+                <!-- Public capsules will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Page -->
+    <div class="page" id="settings">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 40px; font-size: 3rem; color: var(--accent-color);">Settings
+            </h1>
+
+            <div class="glass-card" style="max-width: 600px; margin: 0 auto;">
+                <h3>Theme Settings</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
+                    <button class="btn btn-secondary theme-btn" data-theme="dark">🌙 Dark</button>
+                    <button class="btn btn-secondary theme-btn" data-theme="light">☀️ Light</button>
+                    <button class="btn btn-secondary theme-btn" data-theme="futuristic">🚀 Futuristic</button>
+                </div>
+
+                <h3 style="margin-top: 40px;">Data Management</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+                    <button class="btn btn-secondary" id="exportData">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                    <button class="btn" style="background: var(--error-color); color: white;" id="clearData">
+                        <i class="fas fa-trash"></i> Clear All Data
+                    </button>
+                </div>
+
+                <h3 style="margin-top: 40px;">About</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    ChronoVault v1.0 - A futuristic time capsule platform for preserving your memories and messages for
+                    the future.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <i class="fas fa-check-circle"
+                style="font-size: 3rem; color: var(--success-color); margin-bottom: 20px;"></i>
+            <h2>Success!</h2>
+            <p id="successMessage">Your time capsule has been created successfully!</p>
+            <button class="btn btn-primary" onclick="closeModal('successModal')">Continue</button>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <i class="fas fa-exclamation-triangle"
+                style="font-size: 3rem; color: var(--error-color); margin-bottom: 20px;"></i>
+            <h2>Error</h2>
+            <p id="errorMessage">Something went wrong. Please try again.</p>
+            <button class="btn btn-primary" onclick="closeModal('errorModal')">OK</button>
+        </div>
+    </div>
+
+    <!-- Password Modal -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <i class="fas fa-key" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 20px;"></i>
+            <h2>Enter Password</h2>
+            <p>This capsule is password protected.</p>
+            <input type="password" id="passwordInput" class="form-control" placeholder="Enter password...">
+            <div style="display: flex; gap: 15px; margin-top: 20px;">
+                <button class="btn btn-primary" onclick="verifyPassword()">Unlock</button>
+                <button class="btn btn-secondary" onclick="closeModal('passwordModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
