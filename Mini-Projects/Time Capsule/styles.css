@@ -48,8 +48,7 @@ body {
   cursor: none;
   transition: all 0.3s ease;
 }
-
-/* Custom Cursor */
+/* Default Custom Cursor */
 .cursor {
   position: fixed;
   width: 20px;
@@ -72,6 +71,22 @@ body {
   z-index: 10001;
   transition: transform 0.05s ease;
 }
+
+/* 🛠️ Hides custom cursors on hover of interactive elements */
+a:hover ~ .cursor,
+button:hover ~ .cursor,
+input:hover ~ .cursor,
+textarea:hover ~ .cursor,
+select:hover ~ .cursor,
+a:hover ~ .cursor-dot,
+button:hover ~ .cursor-dot,
+input:hover ~ .cursor-dot,
+textarea:hover ~ .cursor-dot,
+select:hover ~ .cursor-dot {
+  display: none;
+}
+
+/* 👆 OR use a class-based toggle in JavaScript (more reliable) */
 
 /* Animated Background */
 .bg-animation {

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritik Kumar - Creative Developer</title>
+    <meta name="description" content="Full-stack developer and creative technologist crafting digital experiences">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="Styles/style.css">
+    <style>
+       
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="custom-cursor"></div>
+    <div class="scroll-progress"></div>
+    
+    <nav class="navbar">
+        <a href="#" class="nav-link active" data-page="home">Home</a>
+        <a href="#" class="nav-link" data-page="about">About</a>
+        <a href="#" class="nav-link" data-page="projects">Projects</a>
+        <a href="#" class="nav-link" data-page="services">Services</a>
+        <a href="#" class="nav-link" data-page="contact">Contact</a>
+    </nav>
+
+    <div class="theme-toggle">
+        <button class="theme-btn dark" data-theme="dark">🌙</button>
+        <button class="theme-btn light" data-theme="light">☀️</button>
+        <button class="theme-btn glass" data-theme="glass">💎</button>
+    </div>
+
+    <div class="particles"></div>
+
+    <div class="social-icons">
+        <a href="#" class="social-icon">📧</a>
+        <a href="#" class="social-icon">💼</a>
+        <a href="#" class="social-icon">🐱</a>
+        <a href="#" class="social-icon">🐦</a>
+    </div>
+
+    <!-- Home Page -->
+    <div class="page active" id="home">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ritik Kumar</h1>
+                <div class="typewriter" id="typewriter"></div>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" data-page="projects">View Projects</a>
+                    <a href="#" class="btn btn-secondary" data-page="about">About Me</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div class="page" id="about">
+        <section class="section">
+            <h2>About Me</h2>
+            
+            <div class="profile-card fade-in">
+                <div class="profile-image">👨‍💻</div>
+                <h3>Ritik Kumar</h3>
+                <p>Creative Developer & Digital Innovator</p>
+                <p>Passionate about crafting exceptional digital experiences that push the boundaries of what's possible on the web.</p>
+            </div>
+
+            <div class="fun-facts fade-in">
+                <div class="fun-fact">
+                    <span class="fun-fact-number">50+</span>
+                    <span>Projects Completed</span>
+                </div>
+                <div class="fun-fact">
+                    <span class="fun-fact-number">3+</span>
+                    <span>Years Experience</span>
+                </div>
+                <div class="fun-fact">
+                    <span class="fun-fact-number">100+</span>
+                    <span>Cups of Coffee</span>
+                </div>
+                <div class="fun-fact">
+                    <span class="fun-fact-number">24/7</span>
+                    <span>Learning Mode</span>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Started Coding Journey</h3>
+                        <p>React, Vue, Angular, TypeScript</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">⚙️</span>
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Python, MongoDB, PostgreSQL</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🎨</span>
+                    <h3>UI/UX Design</h3>
+                    <p>Figma, Adobe Creative Suite, Prototyping</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🚀</span>
+                    <h3>DevOps</h3>
+                    <p>Docker, AWS, CI/CD, Git</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="75"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Projects Page -->
+    <div class="page" id="projects">
+        <section class="section">
+            <h2>My Projects</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Websites</button>
+                <button class="filter-btn" data-filter="app">Apps</button>
+                <button class="filter-btn" data-filter="game">Games</button>
+                <button class="filter-btn" data-filter="tool">Tools</button>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div class="page" id="services">
+        <section class="section">
+            <h2>Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with modern technologies and best practices.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                        <li>SEO Implementation</li>
+                        <li>Cross-browser Compatibility</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-page="contact">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android devices.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>React Native Development</li>
+                        <li>Flutter Applications</li>
+                        <li>App Store Optimization</li>
+                        <li>Backend Integration</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-page="contact">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered design solutions that create engaging and intuitive digital experiences.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>User Research & Testing</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Visual Design Systems</li>
+                        <li>Accessibility Standards</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-page="contact">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚡</div>
+                    <h3>Performance Optimization</h3>
+                    <p>Speed up your existing applications and improve user experience through optimization.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>Code Refactoring</li>
+                        <li>Database Optimization</li>
+                        <li>CDN Implementation</li>
+                        <li>Performance Monitoring</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-page="contact">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Integration</h3>
+                    <p>Integrate artificial intelligence and machine learning capabilities into your applications.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>Chatbot Development</li>
+                        <li>Computer Vision</li>
+                        <li>Natural Language Processing</li>
+                        <li>Predictive Analytics</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-page="contact">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔧</div>
+                    <h3>Consulting</h3>
+                    <p>Technical consulting and code reviews to help improve your development processes.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>Architecture Planning</li>
+                        <li>Code Reviews</li>
+                        <li>Technology Selection</li>
+                        <li>Team Mentoring</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-page="contact">Get Quote</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="page" id="contact">
+        <section class="section">
+            <h2>Let's Work Together</h2>
+            
+            <div class="contact-form fade-in">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder=" " required>
+                        <label class="form-label">Your Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder=" " required>
+                        <label class="form-label">Email Address</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder=" ">
+                        <label class="form-label">Project Budget</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea class="form-input" rows="5" placeholder=" " required></textarea>
+                        <label class="form-label">Project Description</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        Send Message ✨
+                    </button>
+                </form>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px; color: var(--text-secondary);">
+                <p>📍 Available for remote work worldwide</p>
+                <p>⏰ Usually responds within 24 hours</p>
+                <p>💬 Let's discuss your next project!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 404 Page -->
+    <div class="page" id="404">
+        <div class="page-404">
+            <div class="glitch">404</div>
+            <h2>Lost in Space</h2>
+            <p>The page you're looking for has drifted into the digital void.</p>
+            <a href="#" class="btn btn-primary" data-page="home">Return to Earth</a>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div id="modal-content">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="back-to-top">↑</div>
+
+    <script>
+        
+    </script>
+    <script src="Scripts/script.js"></script>
+</body>
+</html>

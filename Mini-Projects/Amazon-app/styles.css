@@ -1,0 +1,73 @@
+:root {
+            --amazon-primary: #131921;
+            --amazon-secondary: #232f3e;
+            --amazon-yellow: #febd69;
+            --amazon-yellow-dark: #f3a847;
+        }  
+         
+        body {
+            font-family: 'Amazon Ember', Arial, sans-serif;
+            background-color: #eaeded;
+        }
+        
+        .header {
+            background-color: var(--amazon-primary);
+        }
+        
+        .nav-bottom {
+            background-color: var(--amazon-secondary);
+        }
+        
+        .search-bar {
+            flex-grow: 1;
+        }
+        
+        .search-bar:focus-within {
+            box-shadow: 0 0 0 3px var(--amazon-yellow-dark);
+        }
+        
+        .search-button {
+            background-color: var(--amazon-yellow);
+        }
+        
+        .search-button:hover {
+            background-color: var(--amazon-yellow-dark);
+        }
+        
+        .product-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .hero-slide {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slider-nav-dot.active {
+            background-color: var(--amazon-yellow) !important;
+        }
+        
+        .cart-sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .cart-sidebar.active {
+            transform: translateX(0);
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }

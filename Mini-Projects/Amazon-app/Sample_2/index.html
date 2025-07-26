@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Clone - Shop Everything Online at Best Prices</title>
+    <meta name="description" content="Shop from our Amazon Clone store for electronics, fashion, home essentials & more. Discover great deals and fast delivery!" />
+    <meta name="keywords" content="Amazon Clone, online shopping, best deals, e-commerce, electronics, fashion, home appliances, buy online" />
+    <meta name="author" content="NextCoreAI" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yourdomain.com/" />
+    
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Amazon Clone - Shop Everything Online" />
+    <meta property="og:description" content="Your all-in-one online store clone. Buy electronics, clothes, and essentials now!" />
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Amazon Clone - Shop Everything Online" />
+    <meta name="twitter:description" content="Shop the best Amazon-style deals on fashion, gadgets, and home appliances." />
+    <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="Styles.css">
+    
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">Amazon Clone</a>
+            
+            <div class="location">
+                <span>📍</span>
+                <div>
+                    <div style="font-size: 12px;">Deliver to</div>
+                    <div style="font-weight: bold;">India</div>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search products..." id="searchInput">
+                <button class="search-btn" onclick="searchProducts()">🔍</button>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#" class="nav-link">
+                    <div style="font-size: 12px;">Hello, Sign in</div>
+                    <div style="font-weight: bold;">Account & Lists</div>
+                </a>
+                <a href="#" class="nav-link">
+                    <div style="font-size: 12px;">Returns</div>
+                    <div style="font-weight: bold;">& Orders</div>
+                </a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <span>🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <nav class="sub-nav">
+        <div class="sub-nav-container">
+            <a href="#" class="sub-nav-link">All</a>
+            <a href="#" class="sub-nav-link">Today's Deals</a>
+            <a href="#" class="sub-nav-link">Customer Service</a>
+            <a href="#" class="sub-nav-link">Registry</a>
+            <a href="#" class="sub-nav-link">Gift Cards</a>
+            <a href="#" class="sub-nav-link">Sell</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Welcome to Amazon Clone</h1>
+            <p>Discover millions of products at unbeatable prices</p>
+            <button class="cta-button" onclick="scrollToProducts()">Shop Now</button>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterByCategory('electronics')">
+                    <div class="category-icon">📱</div>
+                    <div class="category-name">Electronics</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('clothing')">
+                    <div class="category-icon">👕</div>
+                    <div class="category-name">Clothing</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('home')">
+                    <div class="category-icon">🏠</div>
+                    <div class="category-name">Home & Garden</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('books')">
+                    <div class="category-icon">📚</div>
+                    <div class="category-name">Books</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('sports')">
+                    <div class="category-icon">⚽</div>
+                    <div class="category-name">Sports</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('beauty')">
+                    <div class="category-icon">💄</div>
+                    <div class="category-name">Beauty</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>Category:</label>
+                <select class="filter-select" id="categoryFilter" onchange="applyFilters()">
+                    <option value="">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="home">Home & Garden</option>
+                    <option value="books">Books</option>
+                    <option value="sports">Sports</option>
+                    <option value="beauty">Beauty</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Price Range:</label>
+                <select class="filter-select" id="priceFilter" onchange="applyFilters()">
+                    <option value="">All Prices</option>
+                    <option value="0-25">$0 - $25</option>
+                    <option value="25-50">$25 - $50</option>
+                    <option value="50-100">$50 - $100</option>
+                    <option value="100+">$100+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Sort by:</label>
+                <select class="filter-select" id="sortFilter" onchange="applyFilters()">
+                    <option value="">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Customer Rating</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products -->
+        <section class="products">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading products...</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Add some products to get started!</p>
+            </div>
+        </div>
+        <div class="cart-total" id="cartTotal" style="display: none;">
+            <div class="total-amount">Total: $<span id="totalAmount">0.00</span></div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2>Quick View</h2>
+                <button class="close-cart" onclick="closeQuickView()">×</button>
+            </div>
+            <div id="quickViewContent">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <a href="#">About Amazon</a>
+                <a href="#">Careers</a>
+                <a href="#">Press Releases</a>
+                <a href="#">Amazon Science</a>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money with Us</h3>
+                <a href="#">Sell products on Amazon</a>
+                <a href="#">Sell apps on Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Advertise Your Products</a>
+            </div>
+            <div class="footer-section">
+                <h3>Amazon Payment Products</h3>
+                <a href="#">Amazon Business Card</a>
+                <a href="#">Shop with Points</a>
+                <a href="#">Reload Your Balance</a>
+                <a href="#">Amazon Currency Converter</a>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <a href="#">Amazon and COVID-19</a>
+                <a href="#">Your Account</a>
+                <a href="#">Your Orders</a>
+                <a href="#">Shipping Rates & Policies</a>
+                <a href="#">Returns & Replacements</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Amazon Clone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script>
+        
+    </script>
+    <script src="Script.js"></script>
+</body>
+</html>

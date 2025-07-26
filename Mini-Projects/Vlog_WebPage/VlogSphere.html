@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VlogSphere - Premium Video Blogging Platform</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Styles/style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-play-circle"></i>
+                VlogSphere
+            </div>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#vlogs" class="nav-link">Vlogs</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search vlogs...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-carousel">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80')"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Premium Video Stories</h1>
+            <p class="hero-subtitle">Discover amazing vlogs from creators around the world. Share your story, connect with your audience, and build your community.</p>
+            <div class="hero-cta">
+                <a href="#vlogs" class="cta-button cta-primary">
+                    <i class="fas fa-play"></i>
+                    Watch Now
+                </a>
+                <a href="#subscribe" class="cta-button cta-secondary">
+                    <i class="fas fa-user-plus"></i>
+                    Join Community
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Vlogs Section -->
+    <section class="featured-vlogs fade-in" id="vlogs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Vlogs</h2>
+                <p class="section-subtitle">Discover the most popular and trending video blogs from our amazing creators</p>
+            </div>
+            
+            <div class="vlogs-grid" id="vlogs-grid">
+                <!-- Vlog cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <div class="category-filter" id="category-filter">
+        <h3 class="filter-title">Categories</h3>
+        <div class="filter-options">
+            <button class="filter-option active" data-category="all">All</button>
+            <button class="filter-option" data-category="travel">Travel</button>
+            <button class="filter-option" data-category="food">Food</button>
+            <button class="filter-option" data-category="lifestyle">Lifestyle</button>
+            <button class="filter-option" data-category="tech">Tech</button>
+            <button class="filter-option" data-category="fashion">Fashion</button>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Community Says</h2>
+                <p class="section-subtitle">Join thousands of creators and viewers who love our platform</p>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-content">"VlogSphere has completely transformed how I share my travel adventures. The platform is intuitive, beautiful, and my audience engagement has never been higher!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Sarah Johnson" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Travel Vlogger, 2.1M subscribers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-content">"As a food blogger, I needed a platform that could showcase my content beautifully. VlogSphere's video quality and user experience are absolutely outstanding!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Marcus Chen" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Marcus Chen</h4>
+                            <p>Food Enthusiast, 850K subscribers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-content">"The community here is incredible. I've connected with so many like-minded creators and my content has reached audiences I never thought possible."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Emma Rodriguez" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Lifestyle Creator, 1.3M subscribers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription Float -->
+    <div class="newsletter-float" id="newsletter-float">
+        <button class="newsletter-close" onclick="closeNewsletter()">×</button>
+        <h3 class="newsletter-title">Stay Updated</h3>
+        <p class="newsletter-description">Get the latest vlogs and updates delivered to your inbox weekly!</p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+            <input type="email" class="newsletter-input" placeholder="Your email" required>
+            <button type="submit" class="newsletter-submit">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VlogSphere</h3>
+                <p>The premier platform for video bloggers and content creators. Share your story with the world and build meaningful connections with your audience.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#vlogs">Featured Vlogs</a></p>
+                <p><a href="#categories">Categories</a></p>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <p><a href="#travel">Travel & Adventure</a></p>
+                <p><a href="#food">Food & Cooking</a></p>
+                <p><a href="#lifestyle">Lifestyle</a></p>
+                <p><a href="#tech">Technology</a></p>
+                <p><a href="#fashion">Fashion & Beauty</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p><a href="#help">Help Center</a></p>
+                <p><a href="#privacy">Privacy Policy</a></p>
+                <p><a href="#terms">Terms of Service</a></p>
+                <p><a href="#creators">Creator Guidelines</a></p>
+                <p><a href="#advertise">Advertise</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 VlogSphere. All rights reserved. Made with ❤️ for content creators worldwide.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+    </script>
+    <script src="Scripts/script.js"></script>
+</body>
+</html>
