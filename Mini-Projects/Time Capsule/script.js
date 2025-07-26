@@ -65,7 +65,7 @@ function setupCustomCursor() {
     });
   });
 }
-
+ 
 // Animated Background
 function setupAnimatedBackground() {
   const starsContainer = document.querySelector(".stars");

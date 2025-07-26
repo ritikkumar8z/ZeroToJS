@@ -1149,7 +1149,7 @@
                 items: cart,
                 total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
                 exportDate: new Date().toISOString()
-            };
+            }; 
             
             const dataStr = JSON.stringify(cartData, null, 2);
             const dataBlob = new Blob([dataStr], {type: 'application/json'});

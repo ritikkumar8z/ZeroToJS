@@ -10,7 +10,7 @@
                 thumbnail: "https://images.unsplash.com/photo-1539066636863-1ec19e8a4d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                 duration: "12:34",
                 views: "2.1M"
-            },
+            }, 
             {
                 id: 2,
                 title: "Authentic Italian Pasta Making",

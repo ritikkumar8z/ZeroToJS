@@ -613,7 +613,7 @@
             }
         });
 
-        // Keyboard shortcuts
+        // Keyboard shortcuts 
         document.addEventListener('keydown', function(e) {
             // ESC to close modals
             if (e.key === 'Escape') {
