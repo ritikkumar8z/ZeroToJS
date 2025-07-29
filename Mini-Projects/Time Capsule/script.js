@@ -13,7 +13,7 @@ function initializeApp() {
   setupCustomCursor();
   setupAnimatedBackground();
   setupNavigation();
-  setupTheme();
+  setupTheme(); 
   setupForms();
   loadCapsules();
   startCountdownTimers();
