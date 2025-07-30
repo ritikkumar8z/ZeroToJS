@@ -7,7 +7,7 @@ eventButtons.forEach(button => {
     this.classList.add("clicked");
 
     setTimeout(() => {
-      this.classList.remove("clicked");
+      this.classList.remove("clicked"); 
     }, 300);
   });
 });
