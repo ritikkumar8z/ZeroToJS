@@ -9,7 +9,7 @@ const c = 30; // Cannot be reassigned
 console.log(x);  // undefined
 var x = 5;  // Variables declared with var are hoisted to the top but not initialized.
 
-console.log(y);  // ReferenceError: Cannot access 'y' before initialization
+console.log(y);  // ReferenceError: Cannot access 'y' before initialization 
 let y = 10;  // Variables declared with let and const are hoisted but not initialized.
 
 // Q3: What is a closure in JavaScript?
