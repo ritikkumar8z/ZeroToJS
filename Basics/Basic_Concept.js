@@ -16,7 +16,7 @@ console.log('1 + "2" - 3 = ', 1 + "2" - 3);
 console.log('"10" * "2" = ', "10" * "2");
 console.log('"10" / 2 = ', "10" / 2);
 console.log('"10" % 3 = ', "10" % 3);
-console.log('true == 1 = ', true == 1);
+console.log('true == 1 = ', true == 1); 
 console.log('false == 0 = ', false == 0);
 console.log('true === 1 = ', true === 1);
 console.log('false === 0 = ', false === 0);
