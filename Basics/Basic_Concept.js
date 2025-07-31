@@ -3,7 +3,7 @@ console.log('"5" - 3 = ', "5" - 3);
 console.log('true + 1 = ', true + 1);
 console.log('false + 1 = ', false + 1);
 console.log('null + 1 = ', null + 1);
-console.log('undefined + 1 = ', undefined + 1);
+console.log('undefined + 1 = ', undefined + 1); 
 console.log('null == undefined = ', null == undefined);
 console.log('null === undefined = ', null === undefined);
 console.log('"5" == 5 = ', "5" == 5); 
