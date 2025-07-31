@@ -6,7 +6,7 @@ console.log('null + 1 = ', null + 1);
 console.log('undefined + 1 = ', undefined + 1);
 console.log('null == undefined = ', null == undefined);
 console.log('null === undefined = ', null === undefined);
-console.log('"5" == 5 = ', "5" == 5);
+console.log('"5" == 5 = ', "5" == 5); 
 console.log('"5" === 5 = ', "5" === 5);
 console.log('0 == false = ', 0 == false);
 console.log('0 === false = ', 0 === false);
