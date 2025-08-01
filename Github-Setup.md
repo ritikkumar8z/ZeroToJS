@@ -7,7 +7,7 @@ cd path/to/js-0-to-hero-course
 # Initialize a new Git repository
 git init
 
-# Add all files to version control
+# Add all files to version control 
 git add .
 
 # Commit the changes
