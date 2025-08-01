@@ -2,7 +2,7 @@
         const projects = [
             {
                 id: 1,
-                title: "E-Commerce Platform",
+                title: "E-Commerce Platform", 
                 description: "A modern e-commerce solution with real-time inventory and payment processing.",
                 category: "web",
                 tags: ["React", "Node.js", "MongoDB", "Stripe"], 
