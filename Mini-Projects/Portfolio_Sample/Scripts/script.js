@@ -10,7 +10,7 @@
                 details: "Full-stack e-commerce platform featuring user authentication, product catalog, shopping cart, payment processing, and admin dashboard. Built with React frontend and Node.js backend."
             },
             { 
-                id: 2,
+                id: 2, 
                 title: "Task Management App",
                 description: "Collaborative project management tool with real-time updates and team features.",
                 category: "app",
