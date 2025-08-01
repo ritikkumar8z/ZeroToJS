@@ -6,7 +6,7 @@
                 description: "A modern e-commerce solution with real-time inventory and payment processing.",
                 category: "web",
                 tags: ["React", "Node.js", "MongoDB", "Stripe"],
-                image: "linear-gradient(45deg, #667eea, #764ba2)",
+                image: "linear-gradient(45deg, #667eea, #764ba2)", 
                 details: "Full-stack e-commerce platform featuring user authentication, product catalog, shopping cart, payment processing, and admin dashboard. Built with React frontend and Node.js backend."
             },
             { 
