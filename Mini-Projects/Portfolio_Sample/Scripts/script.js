@@ -12,7 +12,7 @@
             { 
                 id: 2, 
                 title: "Task Management App",
-                description: "Collaborative project management tool with real-time updates and team features.",   
+                description: "Collaborative project management tool with real-time updates and team features.",
                 category: "app",
                 tags: ["Vue.js", "Firebase", "PWA"],
                 image: "linear-gradient(45deg, #f093fb, #f5576c)",
