@@ -1,4 +1,4 @@
-// Project data
+ // Project data
         const projects = [
             {
                 id: 1,
