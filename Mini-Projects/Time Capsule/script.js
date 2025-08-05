@@ -6,7 +6,7 @@ let selectedCapsule = null;
 
 // Initialize Application
 document.addEventListener("DOMContentLoaded", function () {
-  initializeApp();
+  initializeApp(); 
 });   
 
 function initializeApp() {
