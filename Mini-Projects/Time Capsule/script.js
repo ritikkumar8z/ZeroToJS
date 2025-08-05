@@ -7,7 +7,7 @@ let selectedCapsule = null;
 // Initialize Application
 document.addEventListener("DOMContentLoaded", function () {
   initializeApp();
-});
+}); 
 
 function initializeApp() {
   setupCustomCursor(); 
