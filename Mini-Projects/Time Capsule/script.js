@@ -15,7 +15,7 @@ function initializeApp() {
   setupNavigation();
   setupTheme();  
   setupForms();
-  loadCapsules();
+  loadCapsules(); 
   startCountdownTimers();
   setupTimeFlowEffect();
 }
