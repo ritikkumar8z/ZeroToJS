@@ -5,7 +5,7 @@ let currentTheme = localStorage.getItem("chronovault_theme") || "dark";
 let selectedCapsule = null;
 
 // Initialize Application
-document.addEventListener("DOMContentLoaded", function () {  
+document.addEventListener("DOMContentLoaded", function () {   
   initializeApp(); 
 });      
 
