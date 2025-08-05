@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });      
 
 function initializeApp() {
-  setupCustomCursor();  
+  setupCustomCursor();   
   setupAnimatedBackground();
   setupNavigation();
   setupTheme();  
