@@ -7,7 +7,7 @@ createElementBtn.addEventListener("click", function() {
   newElement.textContent = "This is a new dynamically created element!";
  
   newElement.classList.add("new-element-animation");
- 
+  
   elementContainer.appendChild(newElement);
  
   setTimeout(() => {
