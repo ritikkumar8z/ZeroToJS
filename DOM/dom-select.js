@@ -9,7 +9,7 @@ createElementBtn.addEventListener("click", function() {
   newElement.classList.add("new-element-animation");
 
   elementContainer.appendChild(newElement);
-
+ 
   setTimeout(() => {
     newElement.classList.remove("new-element-animation");
   }, 500);
