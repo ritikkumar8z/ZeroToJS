@@ -4,7 +4,7 @@ const elementContainer = document.getElementById("element-container");
 createElementBtn.addEventListener("click", function() {
   const newElement = document.createElement("div"); 
   newElement.classList.add("new-element");
-  newElement.textContent = "This is a new dynamically created element!";
+  newElement.textContent = "This is a new dynamically created element!"; 
  
   newElement.classList.add("new-element-animation");
   
