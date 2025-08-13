@@ -7,7 +7,7 @@
                 originalPrice: 99.99,
                 category: "electronics", 
                 rating: 4.5,  
-                reviews: 1234, 
+                reviews: 1234,  
                 image: "🎧",
                 description: "High-quality wireless headphones with noise cancellation and 30-hour battery life.",
                 features: ["Noise Cancellation", "30h Battery", "Bluetooth 5.0", "Fast Charging"],
