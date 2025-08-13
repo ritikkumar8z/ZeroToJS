@@ -5,7 +5,7 @@
                 title: "Wireless Bluetooth Headphones",
                 price: 79.99,
                 originalPrice: 99.99,
-                category: "electronics",
+                category: "electronics", 
                 rating: 4.5,
                 reviews: 1234,
                 image: "🎧",
