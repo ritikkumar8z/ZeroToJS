@@ -6,7 +6,7 @@
                 price: 79.99,
                 originalPrice: 99.99,
                 category: "electronics", 
-                rating: 4.5,
+                rating: 4.5, 
                 reviews: 1234,
                 image: "🎧",
                 description: "High-quality wireless headphones with noise cancellation and 30-hour battery life.",
