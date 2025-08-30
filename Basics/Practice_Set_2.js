@@ -5,7 +5,7 @@
  *
  * Yeh file JavaScript ka complete Prectice set hai
  * code ke through.
- */
+ */ 
 
 
 // Q1: What is the difference between null and undefined in JavaScript?
