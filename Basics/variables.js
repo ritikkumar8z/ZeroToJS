@@ -1,7 +1,7 @@
 /**
  * 📘 JavaScript Variables - var, let, const
  * Author: Ritik Kumar
- * Date: 6 Jan 2025
+ * Date: 4 Jan 2025
  *
  * 👉 Variables are containers used to store data.
  * In JavaScript, we have 3 ways to declare variables:
