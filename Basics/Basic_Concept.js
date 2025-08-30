@@ -1,3 +1,13 @@
+/**
+ * 📘 JavaScript - Complete Guide with Examples Day one - 
+ * Author: Ritik Kumar
+ * Date: 1 Jan 2025
+ *
+ * Yeh file JavaScript ka complete Basic explanation hai
+ * code ke through.
+ */
+
+
 console.log('1 + "2" = ', 1 + "2");
 console.log('"5" - 3 = ', "5" - 3);
 console.log('true + 1 = ', true + 1);
