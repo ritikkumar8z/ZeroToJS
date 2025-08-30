@@ -1,7 +1,7 @@
 /**
  * 📘 JavaScript Data Types - Primitive vs Reference
  * Author: Ritik Kumar
- * Date: 5 Jan 2025
+ * Date: 3 Jan 2025
  *
  * 👉 JavaScript has 2 main categories of data types:
  *    1. Primitive Types (copied by value)
