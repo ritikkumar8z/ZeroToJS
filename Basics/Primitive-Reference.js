@@ -6,7 +6,7 @@
  * 👉 JavaScript has 2 main categories of data types:
  *    1. Primitive Types (copied by value)
  *    2. Reference Types (copied by reference)
- *
+ * 
  * Let's explore them 👇
  */
 
