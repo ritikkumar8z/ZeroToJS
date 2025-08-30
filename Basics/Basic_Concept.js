@@ -5,7 +5,7 @@
  *
  * Yeh file JavaScript ka complete Basic explanation hai
  * code ke through.
- */
+ */ 
 
 
 console.log('1 + "2" = ', 1 + "2");
