@@ -1,3 +1,13 @@
+/**
+ * 📘 JavaScript - Complete Guide with Examples Day one - 
+ * Author: Ritik Kumar
+ * Date: 2 Jan 2025
+ *
+ * Yeh file JavaScript ka complete Prectice set hai
+ * code ke through.
+ */
+
+
 // Q1: What is the difference between null and undefined in JavaScript?
 let a = null;
 let b;
