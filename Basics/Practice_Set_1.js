@@ -1,3 +1,13 @@
+/**
+ * 📘 JavaScript - Complete Guide with Examples Day one - 
+ * Author: Ritik Kumar
+ * Date: 2 Jan 2025
+ *
+ * Yeh file JavaScript ka complete Prectice set hai
+ * code ke through.
+ */
+
+
 // Q1: What is the difference between var, let, and const in JavaScript?
 
 // var is function-scoped, let and const are block-scoped.
