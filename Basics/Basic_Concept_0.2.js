@@ -1,3 +1,13 @@
+/**
+ * 📘 JavaScript - Complete Guide with Examples Day one - 
+ * Author: Ritik Kumar
+ * Date: 2 Jan 2025
+ *
+ * Yeh file JavaScript ka complete Basic explanation hai
+ * code ke through.
+ */
+
+
 // 🧠 Coercion in template literals
 console.log(`[] + 1 = ${[] + 1}`); // "1"
 
