@@ -6,7 +6,7 @@
  * 👉 Variables are containers used to store data.
  * In JavaScript, we have 3 ways to declare variables:
  *    - var   (old, function scoped)
- *    - let   (modern, block scoped, re-assignable)
+ *    - let   (modern, block scoped, re-assignable) 
  *    - const (modern, block scoped, not re-assignable)
  */
 
