@@ -11,7 +11,7 @@
  *    - Reusing methods/properties of one object in another.
  *    - Achieved via prototype chain or ES6 classes.
  */
-
+ 
 // ------------------------------
 // 1. Prototype Basics
 // ------------------------------
