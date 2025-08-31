@@ -4,7 +4,7 @@
  * Date: 5 Jan 2025
  *
  * 👉 In JavaScript, Strings and Numbers are primitive types.
- *    We also have Math utilities and BigInt for very large numbers.
+ *    We also have Math utilities and BigInt for very large numbers. 
  */
 
 // ------------------------------
