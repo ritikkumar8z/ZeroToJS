@@ -8,7 +8,7 @@
  *    - Function declarations are hoisted fully.
  *    - var is hoisted but initialized as `undefined`.
  *    - let & const are hoisted but kept in "Temporal Dead Zone (TDZ)" until defined.
- */
+ */ 
 
 // ------------------------------
 // 1. var Hoisting
