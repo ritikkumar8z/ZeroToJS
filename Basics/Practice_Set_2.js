@@ -1,7 +1,7 @@
 /**
  * 📘 JavaScript - Complete Guide with Examples Day one - 
  * Author: Ritik Kumar
- * Date: 4 Jan 2025
+ * Date: 2025
  *
  * Yeh file JavaScript ka complete Prectice set hai
  * code ke through.
