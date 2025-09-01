@@ -1,4 +1,4 @@
-/**
+ /**
  * 📘 JavaScript DOM & Browser APIs
  * Author: Ritik Kumar
  * Date: 21 Jan 2025
@@ -15,7 +15,7 @@ const listItems = document.getElementsByTagName("li"); // HTMLCollection (live)
 const firstBtn = document.querySelector(".btn"); // first match
 const allBtns = document.querySelectorAll(".btn"); // NodeList (static)
 
-// Logging
+// Logging 
 console.log(heading);
 console.log(paragraphs);
 console.log(listItems);
