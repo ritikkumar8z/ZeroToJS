@@ -8,9 +8,9 @@ Welcome to the **JavaScript 0 to Hero Practice Course** – a fully hands-on, be
 
 ✅ JavaScript fundamentals (variables, data types, loops, functions, etc.)    
 ✅ DOM manipulation and event handling  
-✅ ES6+ features (let/const, arrow functions, promises, async/await, etc.)  
+✅ ES6+ features (let/const, arrow functions, promises, async/await, etc.) 
 ✅ Array and object methods (map, filter, reduce, destructuring, etc.)  
-✅ Fetch API and JSON handling   
+✅ Fetch API and JSON handling  
 ✅ Local storage and session storage  
 ✅ Error handling and debugging   
 ✅ Modular JS and clean code practices   
