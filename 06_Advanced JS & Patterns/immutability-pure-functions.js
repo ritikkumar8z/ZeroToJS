@@ -4,7 +4,7 @@
  * Date: 7 Feb 2025
  *
  * - Immutability: Don't change existing data, return new copies instead.
- * - Pure Function: Output depends only on input + no side effects.
+ * - Pure Function: Output depends only on input + no side effects. 
  */
 
 // ------------------------------
