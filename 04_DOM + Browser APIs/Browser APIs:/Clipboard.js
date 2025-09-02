@@ -1,6 +1,6 @@
 /**
  * 📘 JavaScript Browser API - Clipboard
- * Author: Ritik Kumar
+ * Author: Ritik Kumar 
  * Date: 25 Jan 2025
  *
  * 👉 Read & write text to the clipboard using the Clipboard API
