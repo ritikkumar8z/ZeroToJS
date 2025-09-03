@@ -5,7 +5,7 @@
  *
  * - Unit Test = test small, isolated pieces of code (functions/classes).
  * - Jest → popular, works with any JS project.
- * - Vitest → modern, super-fast, works seamlessly with Vite.
+ * - Vitest → modern, super-fast, works seamlessly with Vite. 
  */
 
 // ------------------------------
