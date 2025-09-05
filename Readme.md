@@ -2,7 +2,7 @@
 
 Welcome to the **JavaScript 0 to Hero Practice Course** – a fully hands-on, beginner-to-advanced guide to mastering JavaScript through practical examples and real-world projects. Whether you're just starting out or looking to strengthen your JS skills, this course has something for everyone!
 
----
+--- 
    
 ## 🚀 What You’ll Learn  
 
