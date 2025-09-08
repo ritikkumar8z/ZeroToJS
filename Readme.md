@@ -336,11 +336,11 @@ Track your learning journey:
 
 ## 🌟 Success Stories
 
-> *"ZeroToJS transformed my understanding of JavaScript. The project-based approach made everything click!"* - **Sarah M., Frontend Developer**
+> *"ZeroToJS transformed my understanding of JavaScript. The project-based approach made everything click!"* - **Raushan Pandey., Data Scientist & ML Developer**
 
-> *"Got my first developer job after completing this course. The projects in my portfolio were impressive to employers."* - **Alex K., Web Developer**
+> *"Got my first developer job after completing this course. The projects in my portfolio were impressive to employers."* - **RK Singh., Software Engineer**
 
-> *"Finally understood async JavaScript through the weather app project. Brilliant teaching method!"* - **Priya S., Software Engineer**
+> *"Finally understood async JavaScript through the weather app project. Brilliant teaching method!"* - **Mijanur Rahaman., Software Developer**
 
 ## 📞 Support & Community
 
