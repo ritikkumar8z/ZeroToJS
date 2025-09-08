@@ -378,7 +378,7 @@ Passionate about making programming accessible to everyone. With 5+ years in web
 
 ### 💼 **Professional Experience & Education**
 - **Senior Frontend Developer** at NextCoreAI(Jan 2025-Present)
-- **Freelance Developer** (May 2025- Aug 2025)
+- **Freelance Developer**at SimpleBy (May 2025- Aug 2025)
 - **BCA** at Brainware University(2022-2025)
 
 
