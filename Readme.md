@@ -347,7 +347,7 @@ Track your learning journey:
 ### 💬 **Get Help**
 - 🐛 [Report Issues](https://github.com/ritikkumar8z/ZeroToJS/issues)
 - 💡 [Feature Requests](https://github.com/ritikkumar8z/ZeroToJS/issues/new)
-- 📧 Email: ritikkumar8z@gmail.com
+- 📧 Email: ritikkumarparsa45@gmail.com
 
 ### 🌐 **Connect**
 - 📱 [Twitter](https://twitter.com/ritikkumar8z)
@@ -376,10 +376,12 @@ Passionate about making programming accessible to everyone. With 5+ years in web
 - 📚 Created educational content viewed by 100K+ developers
 - 🌟 Open source contributor with 20+ repositories
 
-### 💼 **Professional Experience**
+### 💼 **Professional Experience & Education**
 - **Senior Frontend Developer** at NextCoreAI(Jan 2025-Present)
-- **BCA** at Brainware University(2022-2025)
 - **Freelance Developer** (May 2025- Aug 2025)
+- **BCA** at Brainware University(2022-2025)
+
+
 
 ---
 
