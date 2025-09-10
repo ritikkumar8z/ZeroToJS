@@ -11,7 +11,7 @@
 [![GitHub Forks](https://img.shields.io/github/forks/ritikkumar8z/ZeroToJS?style=social)](https://github.com/ritikkumar8z/ZeroToJS/network/members)
 [![GitHub Issues](https://img.shields.io/github/issues/ritikkumar8z/ZeroToJS)](https://github.com/ritikkumar8z/ZeroToJS/issues) 
 [![GitHub PRs](https://img.shields.io/github/issues-pr/ritikkumar8z/ZeroToJS)](https://github.com/ritikkumar8z/ZeroToJS/pulls)
-
+ 
 **Transform from Zero to JavaScript Hero through hands-on practice and real-world projects**
 
 [📚 Start Learning](#-course-structure) • [🛠️ Quick Setup](#-quick-start) • [🌟 Projects](#-featured-projects) • [💬 Community](#-community)
