@@ -7,7 +7,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)   
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)   
   
-[![GitHub Stars](https://img.shields.io/github/stars/ritikkumar8z/ZeroToJS?style=social)](https://github.com/ritikkumar8z/ZeroToJS/stargazers) 
+[![GitHub Stars](https://img.shields.io/github/stars/ritikkumar8z/ZeroToJS?style=social)](https://github.com/ritikkumar8z/ZeroToJS/stargazers)  
 [![GitHub Forks](https://img.shields.io/github/forks/ritikkumar8z/ZeroToJS?style=social)](https://github.com/ritikkumar8z/ZeroToJS/network/members)
 [![GitHub Issues](https://img.shields.io/github/issues/ritikkumar8z/ZeroToJS)](https://github.com/ritikkumar8z/ZeroToJS/issues) 
 [![GitHub PRs](https://img.shields.io/github/issues-pr/ritikkumar8z/ZeroToJS)](https://github.com/ritikkumar8z/ZeroToJS/pulls)
