@@ -10,7 +10,7 @@
 // ------------------------------
 // 1. Interfaces
 // ------------------------------
-interface User {
+interface User { 
   id: number;
   name: string;
   email?: string; // optional
