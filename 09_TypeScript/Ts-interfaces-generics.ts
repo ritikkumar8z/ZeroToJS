@@ -6,7 +6,7 @@
  * Interfaces → define object shapes (contracts)
  * Generics → reusable, type-safe functions/classes
  */
-
+  
 // ------------------------------
 // 1. Interfaces
 // ------------------------------
