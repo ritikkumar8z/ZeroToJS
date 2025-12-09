@@ -3,8 +3,8 @@
  * Author: Ritik Kumar
  * Date: 9 Jan 2025
  *
- * 👉 'this' refers to the execution context (who is calling the function). 
- *    Its value depends on HOW a function is called, not where it's written.
+ * 👉 'this' refers to the execution context (who is calling the function).  
+ *    Its value depends on HOW a function is called, not where it's written. 
  * 
 
 
