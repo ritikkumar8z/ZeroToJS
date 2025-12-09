@@ -13,7 +13,7 @@
 // ------------------------------
 // 1. Global Context
 // ------------------------------
-console.log("Global this:", this); 
+console.log("Global this:", this);  
 // In browser -> window
 // In Node.js  -> {} (empty object in module scope)
 
