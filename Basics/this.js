@@ -83,7 +83,7 @@ introduce.call(person, "Jaipur", "India");
 // apply -> same as call but arguments as array
 introduce.apply(person, ["Delhi", "India"]); 
 // I am Ritik from Delhi, India
-
+ 
 // bind -> returns a new function with bound 'this'
 let boundIntro = introduce.bind(person, "Kolkata", "India");
 boundIntro(); 
